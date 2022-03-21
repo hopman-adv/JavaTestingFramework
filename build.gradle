@@ -1,0 +1,35 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+//SourceSet like this can be deleted (src/main/java are defaults)
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+    }
+}
+
+dependencies {
+    testImplementation 'io.rest-assured:rest-assured:4.5.1'
+    testImplementation 'io.rest-assured:json-schema-validator:4.5.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+
+    api 'org.apache.commons:commons-math3:3.6.1'
+
+    implementation 'com.google.guava:guava:30.1.1-jre'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.1.2'
+    implementation 'com.github.javafaker:javafaker:0.15'
+
+}
